@@ -420,6 +420,8 @@ body{
 
 .footer__wrap-text{
     font-size: 1.6rem;
+    line-height: 1.6rem;
+    opacity: 0.8;
     font-style: italic;
     cursor: pointer;
 }
