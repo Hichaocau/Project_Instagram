@@ -38,6 +38,7 @@ body{
     width: 100%;
     height: 60px;
     background-color: var(--white-color);
+    z-index: 200;
 
     border-bottom: 1px solid rgb(219, 219, 219);
     display: flex;
@@ -287,26 +288,138 @@ body{
 
 .container{
     width: 100%;
-    margin-top: 50px;
+    margin-top: 89px;
     display: flex;
     justify-content: center;
 }
 
 .container__wrap{
-    width: 70%;
-    max-width: 935px;
+    width: 100%;
+    max-width: 975px;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 65% 35%;
     grid-gap: 28px;
     overflow: hidden;
+    padding: 0 10px;
 }
 
 .content{
-    height: 400px;
-    background-color: red;
+    border: 1px solid rgb(219, 219, 219);
+}  
+
+.content__main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
 }
 
-.suggest{
-    height: 400px;
-    background-color: blue;
+.content__main-header-info{
+    display: flex;
+    align-items: center;
+}
+
+.content__main-header-logo{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(224, 85, 85);
+}
+.content__main-header-logo img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.content__main-header-text{
+    font-size: 1.4rem;
+    padding-left: 14px;
+    color: #262626;
+    font-weight: 600;
+}
+
+.content__main-header-icon{
+    font-size: 1.3rem;
+}
+
+.slick-arrow{
+    /* abscentery code tắt */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(238, 232, 232, 0.6);
+}
+
+
+.slick-arrow i{
+    padding-top: 1px;
+    opacity: 0.5;
+}
+
+.slick-prev{
+    left: 0;
+}
+
+.slick-next{
+    right: 0;
+}
+
+.slick-dots{
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0 3px; /* khoảng cách các elements*/
+}
+
+.slick-dots button{
+    border-radius: 50%;
+    font-size: 0;
+    background-color: #93a4ac;
+    border: none;
+    outline: none;
+    width: 6px;
+    height: 6px;
+    transition: all 0.2s linear;
+}
+
+.slick-dots .slick-active button{
+    background-color: #0095F6;
+}
+
+.slick-slide img{
+    width: 100%;
+}
+
+.footer{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(219, 219, 219);
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footer__wrap{
+    margin: auto;
+}
+
+.footer__wrap-text{
+    font-size: 1.6rem;
+    font-style: italic;
+    cursor: pointer;
 }
