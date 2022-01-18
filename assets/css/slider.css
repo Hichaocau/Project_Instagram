@@ -1,0 +1,62 @@
+.slick-arrow{
+    /* abscentery code tắt */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(238, 232, 232, 0.6);
+}
+
+
+.slick-arrow i{
+    padding-top: 1px;
+    opacity: 0.5;
+}
+
+.slick-prev{
+    left: 0;
+}
+
+.slick-next{
+    right: 0;
+}
+
+.slick-dots{
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0 3px; /* khoảng cách các elements*/
+}
+
+.slick-dots button{
+    border-radius: 50%;
+    font-size: 0;
+    background-color: #93a4ac;
+    border: none;
+    outline: none;
+    width: 6px;
+    height: 6px;
+    transition: all 0.2s linear;
+}
+
+.slick-dots .slick-active button{
+    background-color: #0095F6;
+}
+
+.slick-slide img{
+    width: 100%;
+}

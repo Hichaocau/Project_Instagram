@@ -13,6 +13,14 @@
     .navbar__input{
         margin-left: 0px;
     }
+    .container__wrap{
+        width: 100%;
+        max-width: 600px;
+        display: block;
+    }
+    .suggest{
+        display: none;
+    }
 }
 
 /* Tablet */
@@ -25,6 +33,9 @@
 /* Mobile */
 @media (max-width: 739px){
     .hide-on-mobile{
+        display: none;
+    }
+    .navbar__input{
         display: none;
     }
 }

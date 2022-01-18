@@ -1,11 +1,10 @@
-const dom = document.querySelector.bind(document)
+const getElm = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-const navInputWrap = dom('.navbar__input')
-const navInput = dom('.search__input')
-const iconSearch = dom('.search__logo')
-const iconClose = dom('.search__close')
-const navbarHistory = dom('.search__history')
+const navInput = getElm('.search__input')
+const iconSearch = getElm('.search__logo')
+const iconClose = getElm('.search__close')
+const navbarHistory = getElm('.search__history')
 
 
 // click input history
@@ -14,19 +13,22 @@ const changeInput = function() {
     iconClose.classList.toggle('hide')
     navbarHistory.classList.toggle('hide')
 }
-navInputWrap.addEventListener('click', changeInput)
+navInput.addEventListener('click', changeInput)
+iconClose.addEventListener('click', changeInput)
 
 // click window =>> close navbarhistory
 window.addEventListener('click', function(e){
     if ((!e.target.closest('.search__history')) && (!e.target.closest('.navbar__input'))){
         navbarHistory.classList.add('hide')
+        iconSearch.classList.remove('hide')
+        iconClose.classList.add('hide')
     }
 })
 
 
 // click login
-const iconUser = dom('.navbar__user')
-const navbarLogin = dom('.navbar__login')
+const iconUser = getElm('.navbar__user')
+const navbarLogin = getElm('.navbar__login')
 
 const changeLogin = function (){
     navbarLogin.classList.toggle('hide')
