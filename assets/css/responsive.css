@@ -38,4 +38,7 @@
     .navbar__input{
         display: none;
     }
+    .content__main-des-cmt h2{
+        padding-top: 10px;
+    }
 }

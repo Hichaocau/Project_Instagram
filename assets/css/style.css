@@ -2,9 +2,6 @@
 :root{
     --white-color: #fff;
     --black-color: #000;
-    --text-color: #212121;
-    --text-des-color: #505050;
-    --hover-color: #3fd0d4; 
 }
 
 *{
@@ -90,7 +87,7 @@ body{
 }
 
 .hide{
-    display: none;
+    display: none !important;
 }
 
 .navbar__list{
@@ -180,6 +177,9 @@ body{
     cursor: pointer;
 
 }
+.search__history-header--clear:hover{
+    color: #113af0;
+}
 
 .search__history-list{
     padding: 16px 16px 0 16px;
@@ -222,9 +222,11 @@ body{
     margin-right: 10px;
 }
 
-/* .search__input:focus ~ .search__history{
-    display: block;
-} */
+.search__history-list--icon:hover{
+    font-size: 1.8rem;
+    color: red;
+    transform: rotate(90deg);
+}
 
 .navbar__user-wrap{
     position: relative;
@@ -304,10 +306,55 @@ body{
     padding: 0 10px;
 } 
 
+.content__header{
+    width: 100%;
+    border: 1px solid rgb(219, 219, 219);
+    margin-bottom: 24px;
+}
+
+.content__header-slider{
+    width: 100%;
+    height: 116px;
+    padding-left: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.content__header-item{
+    padding: 0 10px;
+}
+
+.content__header-img{
+    border: 3px solid rgb(196, 89, 89);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.content__header-img img{
+    height: 52px;
+    width: 52px;
+    right: 1px;
+    top: 1px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.content__header-title{
+    color: #262626;
+    font-size: 1.2rem;
+    line-height: 12px;
+    padding-top: 10px;
+    font-weight: 400;
+}
+
+
 .content__main{
     margin-bottom: 24px;
     border: 1px solid rgb(219, 219, 219);
-
 }
 
 .content__main-header{
@@ -358,6 +405,10 @@ body{
     padding: 8px 8px;
 }
 
+.content__main-des-icon--interact{
+    position: relative;
+}
+
 .content__main-des-icon--interact svg{
     height: 24px;
     width: 24px;
@@ -365,9 +416,35 @@ body{
     margin: 0 8px;
 }
 
+.content__main-des-icon--interact-wrap{
+    padding-left: 42px;
+}
+
 .content__main-des-icon--save svg:hover,
 .content__main-des-icon--interact svg:hover{
     opacity: 0.5;
+}
+
+.love_active{
+    color: rgb(237, 73, 86);
+    fill: rgb(237, 73, 86);
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 8px;
+    position: absolute;
+    padding-top: -13px;
+    top: 1px;
+    right: 84px; 
+}
+
+.love{
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 8px;
+    position: absolute;
+    padding-top: -13px;
+    top: 1px;
+    right: 84px;
 }
 
 .content__main-des-icon--save svg{
@@ -387,8 +464,8 @@ body{
     font-size: 1.4rem;
     line-height: 1.4rem;
     color: #262626;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     font-weight: 600;
 }
 
@@ -409,6 +486,7 @@ body{
     line-height: 1.4rem;
     color: #8e8e8e;
     padding-bottom: 16px;
+    padding-top: 10px;
     font-weight: 400;
 }
 
@@ -457,7 +535,7 @@ body{
 
 .suggest{
     width: 90%;
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 .suggest__main{
@@ -536,9 +614,6 @@ body{
     color: #262626;
     opacity: 0.9;
     cursor: pointer;
-}
-
-.suggest__list{
 }
 
 .suggest__list-item{
@@ -637,3 +712,4 @@ body{
     font-style: italic;
     cursor: pointer;
 }
+

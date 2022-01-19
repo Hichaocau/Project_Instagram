@@ -16,6 +16,9 @@
     background-color: rgba(238, 232, 232, 0.6);
 }
 
+.slick-arrow-header{
+    background-color: #fafafa;
+}
 
 .slick-arrow i{
     padding-top: 1px;
@@ -24,10 +27,14 @@
 
 .slick-prev{
     left: 0;
+    margin-left: 12px;
+    box-shadow: -1px 1px 6px 3px rgba(206, 201, 201, 0.6);
 }
 
 .slick-next{
     right: 0;
+    margin-right: 12px;
+    box-shadow: -1px 1px 6px 3px rgba(206, 201, 201, 0.6);
 }
 
 .slick-dots{
