@@ -139,3 +139,52 @@ function activeLike() {
   }
 }
 activeLike()
+
+// delete item in offer
+function deleteOffer() {
+  const iconDelete = $$('.content__offer-close i')
+  const offerItem = $$('.content__offer-item')
+  
+  iconDelete.forEach(function(item, index){
+    item.onclick = function(e){
+      offerItem[index].classList.add('hide')
+    }
+  })
+}
+deleteOffer()
+
+// click button follow
+function clickBtn() {
+
+  const buttonFollow = $$('.content__button')
+  const buttonWatching = $$('.button__active')
+  
+  for( let i = 0; i < buttonFollow.length; i++){
+    const buttonText = function() {
+      buttonFollow[i].classList.toggle('hide')
+      buttonWatching[i].classList.toggle('hide')
+    }
+    
+    buttonFollow[i].addEventListener('click', buttonText)
+    buttonWatching[i].addEventListener('click', buttonText)
+  }
+}
+clickBtn()
+
+// click suggest follow
+function clickTextFollow() {
+
+  const textFollow = $$('.suggest__list-item-user-text')
+  const textWatching = $$('.suggest__list-item-user-text--active')
+  
+  for( let i = 0; i < textFollow.length; i++){
+    const changeFollow = function() {
+      textFollow[i].classList.toggle('hide')
+      textWatching[i].classList.toggle('hide')
+    }
+    
+    textFollow[i].addEventListener('click', changeFollow)
+    textWatching[i].addEventListener('click', changeFollow)
+  }
+}
+clickTextFollow()

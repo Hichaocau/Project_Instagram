@@ -64,3 +64,37 @@ $(document).ready(function(){
           ],
     });
 });
+
+// slick slider offer
+$(document).ready(function(){
+  $('.content__offer-list').slick({
+      draggable: true,
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      dots: false, //dấu chấm dưới slider css: slick-dots
+      // arrows: false, //ẩn previous/next
+      prevArrow: `<button type='button' class='slick-prev slick-arrow slick-arrow-header'><i class="fas fa-chevron-left"></i></button>`,
+      nextArrow: `<button type='button' class='slick-next slick-arrow slick-arrow-header'><i class="fas fa-chevron-right"></i></button>`,
+      responsive: [
+          {
+            breakpoint: 1025,
+            settings: {
+              dots: false
+            }
+          },
+          {
+            breakpoint: 741,
+            settings: {
+            slidesToShow: 3,     
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 3,
+            }
+          }
+        ],
+  });
+});

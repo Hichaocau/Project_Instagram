@@ -17,6 +17,7 @@
         width: 100%;
         max-width: 600px;
         display: block;
+        padding: 0;
     }
     .suggest{
         display: none;
