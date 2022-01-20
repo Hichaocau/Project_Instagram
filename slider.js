@@ -2,7 +2,7 @@
 //slick slider main 
 $(document).ready(function(){
     $('.content__main-sider').slick({
-        draggable: false, //kéo slider = chuột
+        draggable: true, //kéo slider = chuột
         infinite: false,
         dots: true, //dấu chấm dưới slider css: slick-dots
         // arrows: false, //ẩn previous/next
@@ -86,13 +86,15 @@ $(document).ready(function(){
           {
             breakpoint: 741,
             settings: {
-            slidesToShow: 3,     
+            slidesToShow: 1,  
+            slidesToScroll: 1,
             }
           },
           {
             breakpoint: 480,
             settings: {
-              slidesToShow: 3,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             }
           }
         ],

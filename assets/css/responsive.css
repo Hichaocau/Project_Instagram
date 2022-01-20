@@ -42,4 +42,8 @@
     .content__main-des-cmt h2{
         padding-top: 10px;
     }
+    .modal__wrap{
+        width: 260px;
+    }
+    
 }

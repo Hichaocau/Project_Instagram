@@ -71,10 +71,15 @@ function deleteEach() {
   const iconHistory = $$('.search__history-list--icon')
 
   // cach 1 dung for
+  // for(let i =0 ; i < historyItem.length; i++){
+  //   iconHistory[i].onclick = function(e){
+  //     historyItem[i].classList.add('hide')
+  //   }
+  // }
   for(let i =0 ; i < historyItem.length; i++){
-    iconHistory[i].onclick = function(e){
+    iconHistory[i].addEventListener('click', function(e){
       historyItem[i].classList.add('hide')
-    }
+    })
   }
 
   //cach 2 dung forEach
@@ -89,7 +94,7 @@ deleteEach()
 
 // actice like
 function activeLike() {
-  var likeArray = [15.454 , 464.385 , 8.686 , 6.158]
+  var likeArray = [15.454 , 464.385 , 18.686, 308.416 , 6.158, 10.178]
 
   // function convert number
   function numberFormat(num) {
@@ -114,7 +119,7 @@ function activeLike() {
   const loveIconActive = $$('.love_active')
 
   for ( let i = 0; i < loveIcon.length; i++){
-    loveIcon[i].onclick = function(e){
+    loveIcon[i].addEventListener('click', function(e){
       loveIconActive[i].classList.toggle('hide')
       let newSpan = likeArray.map(function(item){
         return `
@@ -122,12 +127,12 @@ function activeLike() {
         `
       })   
         spanLike[i].innerHTML = newSpan[i]
-      }
+      })
   }
 
   // click icon like -1
   for ( let i = 0; i < loveIconActive.length; i++){
-    loveIconActive[i].onclick = function(e){
+    loveIconActive[i].addEventListener('click', function(e){
       loveIconActive[i].classList.toggle('hide')
       let newSpan = likeArray.map(function(item){
         return `
@@ -135,7 +140,7 @@ function activeLike() {
         `
       })
       spanLike[i].innerHTML = newSpan[i]
-    }
+    })
   }
 }
 activeLike()
@@ -146,9 +151,9 @@ function deleteOffer() {
   const offerItem = $$('.content__offer-item')
   
   iconDelete.forEach(function(item, index){
-    item.onclick = function(e){
+    item.addEventListener('click', function(e){
       offerItem[index].classList.add('hide')
-    }
+    })
   })
 }
 deleteOffer()
@@ -188,3 +193,38 @@ function clickTextFollow() {
   }
 }
 clickTextFollow()
+
+
+// active modal
+function activeModal() {
+  
+  const iconMenu = $$('.content__main-header-icon')
+  const iconCloseModal = $$('.modal__item--active')
+  const modal = getElm('.modal')
+  
+  function changeModal() {
+    modal.classList.toggle('hide')
+  }
+  
+  for (let i = 0; i < iconMenu.length; i++) {
+    iconMenu[i].addEventListener('click', changeModal)
+  }
+  
+  for (let i = 0; i < iconCloseModal.length; i++) {
+  iconCloseModal[i].addEventListener('click', changeModal)
+  }
+
+  modal.addEventListener('click', function(e) {
+    console.log(e.target)
+    console.log(e.currentTarget)
+    if(e.target === e.currentTarget) {
+      changeModal()
+    }
+  })
+}
+activeModal()
+
+// currentTarget: là nơi mà phần tử 
+// đã được gắn 1 trình xử lý sự kiện rõ ràng (modal ẩn/hiện)
+
+// target: là nơi mà phần tử có sự kiện xảy ra
