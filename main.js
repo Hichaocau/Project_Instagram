@@ -94,7 +94,7 @@ deleteEach()
 
 // actice like
 function activeLike() {
-  var likeArray = [15.454 , 464.385 , 18.686, 308.416 , 6.158, 10.178]
+  var likeArray = [15.454 , 464.385 , 18.686, 308.416 , 200.701, 10.178]
 
   // function convert number
   function numberFormat(num) {
@@ -215,8 +215,6 @@ function activeModal() {
   }
 
   modal.addEventListener('click', function(e) {
-    console.log(e.target)
-    console.log(e.currentTarget)
     if(e.target === e.currentTarget) {
       changeModal()
     }
@@ -228,3 +226,24 @@ activeModal()
 // đã được gắn 1 trình xử lý sự kiện rõ ràng (modal ẩn/hiện)
 
 // target: là nơi mà phần tử có sự kiện xảy ra
+
+// click creat new post
+function creatNewPost() {
+  const createPost = getElm('.navbar__list-item--create')
+  const iconCreatPost = getElm('.navbar__list-item--create-wrap')
+  const iconClosePost = getElm('.create__icon')
+
+  function changePost() {
+    createPost.classList.toggle('hide')
+  }
+
+  iconCreatPost.addEventListener('click', changePost)
+  iconClosePost.addEventListener('click', changePost)
+
+  createPost.addEventListener('click', function(e) {
+    if(e.target === e.currentTarget) {
+      changePost()
+    }
+  })
+}
+creatNewPost()
