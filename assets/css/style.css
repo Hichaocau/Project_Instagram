@@ -690,7 +690,7 @@ body{
 }
 
 .suggest__main{
-    /* position: fixed; */
+    position: fixed;
     width: 300px;
 }
 
@@ -958,6 +958,8 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-top: 89px;
+    /* position: relative; */
 }
 
 .message__wrap{
@@ -973,13 +975,11 @@ body{
     border-top: 1px solid rgb(219, 219, 219);
     border-bottom: 1px solid rgb(219, 219, 219);
     border-left: 1px solid rgb(219, 219, 219);
-    height: 300px;
 }
 
 .message__detail{
     width: 98%;
     border: 1px solid rgb(219, 219, 219);
-    height: 300px;
 }
 
 .message__info-header{
@@ -992,12 +992,14 @@ body{
 
 .message__info-header svg{
     margin-right: 18px;
+    cursor: pointer;
 }
 
 .message__info-header-user{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     flex: 1;
 }
 
@@ -1019,6 +1021,11 @@ body{
     padding: 8px 20px;
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.message__info-item:hover{
+    background-color: rgb(248, 246, 246);
 }
 
 .message__info-item-img{
@@ -1044,7 +1051,6 @@ body{
     border: 3.5px solid #fff;
 }
 
-
 .message__info-item-text{
     display: flex;
     flex-direction: column;
@@ -1063,9 +1069,186 @@ body{
     padding-top: 2px;
 }
 
+.message__detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.message__detail-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.message__detail-wrap-img{
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
 
+.message__detail-wrap-img img{
+    width: 55px;
+    height: 55px;
+}
+
+.message__detail-wrap h2{
+    font-size: 2.2rem;
+    line-height: 26px;
+    color: #262626;
+    font-weight: 300;
+    margin: 16px 0 8px 0;
+}
+
+.message__detail-wrap h3{
+    font-size: 1.4rem;
+    line-height: 18px;
+    color: #8e8e8e;
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.message__detail-wrap button{
+    background-color: #0095f6;
+    color: white;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 6px 9px;
+    cursor: pointer;
+}
+
+.creatmess{
+    position: fixed;
+    background-color: rgba(0,0,0,.65);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.creatmess__wrap{
+    width: 400px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.creatmess__header{
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.creatmess__header i{
+    font-size: 1.7rem;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.creatmess__header i:hover{
+    color: red;
+    transform: rotate(90deg);
+}
+.creatmess__search span,
+.creatmess__header h3{
+    font-size: 1.6rem;
+    color: #262626;
+    font-weight: 600;
+}
+
+.creatmess__header span{
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    color: #0095f6;
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.creatmess__search{
+    height: 55px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.creatmess__search input{
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    margin-left: 34px;
+}
+
+.creatmess__search input::placeholder{
+    color: #dbdbdb;
+}
+
+.creatmess__list{
+    padding-bottom: 20px;
+}   
+
+.creatmess__list h2{
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: 20px 16px 10px 16px;
+}
+
+.creatmess__list-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px 8px 16px;
+}
+
+.creatmess__list-item:hover{
+    background-color: rgb(248, 246, 246);
+}
+
+.creatmess__list-item input{
+    transform: scale(1.7);
+    margin-right: 20px;
+}
+
+.creatmess__list-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.creatmess__list-item img{
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.creatmess__list-item-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.creatmess__list-item-text span{
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    color: #262626;
+    font-weight: 600;
+}
+
+.creatmess__list-item-text span:nth-child(2){
+    color: #8e8e8e;
+    font-weight: 400;
+    margin-top: 4px;
+}
 
 .footer{
     width: 100%;

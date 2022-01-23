@@ -247,3 +247,34 @@ function creatNewPost() {
   })
 }
 creatNewPost()
+
+// click open message
+function openMess() {
+  const Mess = getElm('.message')
+  const iconOpenMess = getElm('.navbar__list-item--message')
+  const container = getElm('.container')
+  const iconHome = getElm('.navbar__list-item--home')
+
+
+  function changeMess() {
+    Mess.classList.toggle('hide')
+    container.classList.toggle('hide')
+  }
+
+  iconOpenMess.addEventListener('click', changeMess)
+
+
+  iconHome.addEventListener('click', function(e){
+    if(container.classList.contains('hide')){
+      container.classList.remove('hide')
+      Mess.classList.add('hide')
+    }  
+  })
+}
+openMess()
+
+// click open new message
+function openNewMess() {
+  
+}
+openNewMess()
