@@ -295,3 +295,23 @@ function openNewMess() {
   })
 }
 openNewMess()
+
+// click open notify
+function openNotify() {
+  const notify = getElm('.notify')
+  const iconNotify = getElm('.navbar__list-item--notify svg')
+
+  function changeNotify() {
+    notify.classList.toggle('hide')
+  }
+
+  iconNotify.addEventListener('click', changeNotify)
+  // click window =>> close notify
+  window.addEventListener('click', function(e){
+    if ((!e.target.closest('.notify')) && (!e.target.closest('.navbar__list-item--notify'))){
+      notify.classList.add('hide')
+    }
+})
+
+}
+openNotify() 

@@ -629,6 +629,7 @@ body{
     font-weight: 500;
     padding: 6px 35px;
     cursor: pointer;
+    z-index: 2;
     margin: auto;
 }
 
@@ -1270,6 +1271,131 @@ body{
     font-weight: 400;
     margin-top: 4px;
 }
+
+.navbar__list-item--notify{
+    position: relative;
+}
+
+.notify{
+    position: absolute;
+    width: 483px;
+    max-height: 362px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--white-color);
+    border-radius: 4px;
+    top: 41px;
+    right: -41px;
+    animation: fadeIn ease 0.5s;
+    z-index: 10;
+    box-shadow: 0 0 5px 1px rgba(var(--jb7,0,0,0),.0975);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.notify::before{
+    position: absolute;
+    content: "";
+    right: 55px;
+    top: -8px;
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+}
+
+.notify__wrap{
+    overflow-y: auto;
+    max-height: 362px;
+}
+.notify__wrap2{
+    /* overflow-y: auto; */
+    max-height: 362px;
+}
+
+.notify__wrap2::-webkit-scrollbar{
+    width: 12px;
+}
+
+.notify__wrap2::-webkit-scrollbar-track{
+    background-color: #f1f1f1;
+}
+
+.notify__wrap2::-webkit-scrollbar-thumb{
+    background-color: rgb(214, 195, 195);
+}
+
+.notify__wrap h2{
+    display: block;
+    font-size: 1.4rem;
+    line-height: 18px;
+    padding: 10px 12px 0 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.notify__item{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px 10px 12px;
+}
+
+.notify__item img{
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    margin-right: 16px;
+}
+
+.notify__item p{
+    font-size: 1.4rem;
+    line-height: 14px;
+    margin-right: 6px;
+}
+
+.notify__item p span{
+    margin-right: 6px;
+    color: #262626;
+    font-weight: 600;
+}
+
+.notify__item span{
+    font-size: 1.4rem;
+    line-height: 14px;
+    color: #8e8e8e;
+    font-weight: 300;
+}
+
+.notify__item .notify__item-img{
+    border-radius: unset;
+    width: 54px;
+    height: 54px;
+    margin-left: 136px;
+    margin-right: 0;
+    z-index: 2;
+}
+
+.notify__item .notify__item-img2{
+    border-radius: unset;
+    margin-left: 101px;
+    margin-right: 0;
+    z-index: 2;
+
+
+}
+
+.notify__item-user{
+
+}
+
 
 .footer{
     width: 100%;
