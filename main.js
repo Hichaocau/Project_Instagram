@@ -106,7 +106,7 @@ function activeLike() {
   const spanLike = $$('.content__des-span')
   const newSpan = likeArray.map(function(item){
     return `
-    <span class="content__des-span">${numberFormat(item)} lượt thích</span>
+    <span class="content__des-span">${numberFormat(item)} likes</span>
     `
   })
 
@@ -123,7 +123,7 @@ function activeLike() {
       loveIconActive[i].classList.toggle('hide')
       let newSpan = likeArray.map(function(item){
         return `
-        <span class="content__des-span">${numberFormat(item + 0.001)} lượt thích</span>
+        <span class="content__des-span">${numberFormat(item + 0.001)} likes</span>
         `
       })   
         spanLike[i].innerHTML = newSpan[i]
@@ -136,7 +136,7 @@ function activeLike() {
       loveIconActive[i].classList.toggle('hide')
       let newSpan = likeArray.map(function(item){
         return `
-        <span class="content__des-span">${numberFormat(item)} lượt thích</span>
+        <span class="content__des-span">${numberFormat(item)} likes</span>
         `
       })
       spanLike[i].innerHTML = newSpan[i]
@@ -275,6 +275,23 @@ openMess()
 
 // click open new message
 function openNewMess() {
+  const createMess = getElm('.creatmess')
+  const iconCreateMess = getElm('.message__info-header svg')
+  const btnCreateMess = getElm('.message__detail-wrap button')
+  const iconCloseMess = getElm('.creatmess__header i')
   
+  function changeCreateMes() {
+    createMess.classList.toggle('hide')
+  }
+  
+  iconCreateMess.addEventListener('click', changeCreateMes)
+  btnCreateMess.addEventListener('click', changeCreateMes)
+  iconCloseMess.addEventListener('click', changeCreateMes)
+
+  createMess.addEventListener('click', function(e) {
+    if(e.target === e.currentTarget){
+      changeCreateMes()
+    }
+  })
 }
 openNewMess()

@@ -616,7 +616,7 @@ body{
 }
 
 .content__offer-item--btn{
-    width: 75%;
+    width: 100%;
     display: flex;
     margin: 20px auto;
 }
@@ -629,17 +629,27 @@ body{
     font-weight: 500;
     padding: 6px 35px;
     cursor: pointer;
+    margin: auto;
+}
+
+.content__button:hover{
+    background-color: #5140ee;
 }
 
 .button__active{
     background-color: white;
     color: #262626;
     border: 1px solid rgb(219, 219, 219);
-    padding: 6px 18px;
+    padding: 6px 24px;
     border-radius: 4px;
     font-size: 1.4rem;
     font-weight: 500;
+    margin: auto;
     cursor: pointer;
+}
+
+.button__active:hover{
+    background-color: rgb(248, 246, 246);
 }
 
 .content__offer-close{
@@ -993,6 +1003,12 @@ body{
 .message__info-header svg{
     margin-right: 18px;
     cursor: pointer;
+    position: relative;
+    transition: top linear 0.5s;
+}
+
+.message__info-header svg:hover{
+    top: -4px;
 }
 
 .message__info-header-user{
@@ -1110,6 +1126,7 @@ body{
     color: #8e8e8e;
     font-weight: 300;
     margin-bottom: 24px;
+    text-align: center;
 }
 
 .message__detail-wrap button{
@@ -1120,6 +1137,10 @@ body{
     font-weight: 500;
     padding: 6px 9px;
     cursor: pointer;
+}
+
+.message__detail-wrap button:hover{
+    background-color: #5140ee;
 }
 
 .creatmess{

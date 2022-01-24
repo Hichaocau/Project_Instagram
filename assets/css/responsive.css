@@ -45,5 +45,7 @@
     .modal__wrap{
         width: 260px;
     }
-    
+    .message__wrap{
+        grid-template-columns: 53% 47%;
+    }
 }
