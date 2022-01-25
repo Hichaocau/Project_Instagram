@@ -268,10 +268,23 @@ function openMess() {
     if(container.classList.contains('hide')){
       container.classList.remove('hide')
       Mess.classList.add('hide')
+      exploree.classList.add('hide')
     }  
   })
+  // click open explore
+  const exploree = getElm('.explore')
+  const iconExplore = getElm('.navbar__list-item--explore')
+  
+  function changeExplore() {
+      exploree.classList.toggle('hide')
+      container.classList.toggle('hide')
+    }
+  
+    iconExplore.addEventListener('click', changeExplore)
+
 }
 openMess()
+
 
 // click open new message
 function openNewMess() {
@@ -279,7 +292,11 @@ function openNewMess() {
   const iconCreateMess = getElm('.message__info-header svg')
   const btnCreateMess = getElm('.message__detail-wrap button')
   const iconCloseMess = getElm('.creatmess__header i')
-  
+
+  const iconOpenSwitch = getElm('.message__info-header-user')
+  const switchAccount = getElm('.switch')
+  const iconCloseSwitch = getElm('.switch__footer')
+
   function changeCreateMes() {
     createMess.classList.toggle('hide')
   }
@@ -291,6 +308,20 @@ function openNewMess() {
   createMess.addEventListener('click', function(e) {
     if(e.target === e.currentTarget){
       changeCreateMes()
+    }
+  })
+
+  // switch accounts
+  function changeAccount() {
+    switchAccount.classList.toggle('hide')
+  }
+
+  iconOpenSwitch.addEventListener('click', changeAccount)
+  iconCloseSwitch.addEventListener('click', changeAccount)
+
+  switchAccount.addEventListener('click', function(e) {
+    if(e.target === e.currentTarget){
+      changeAccount()
     }
   })
 }
@@ -315,3 +346,6 @@ function openNotify() {
 
 }
 openNotify() 
+
+
+

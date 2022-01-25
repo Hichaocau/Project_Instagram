@@ -29,6 +29,9 @@
     .hide-on-tablet{
         display: none;
     }
+    .explore__row{
+        margin-bottom: 24px;
+    }
 }
 
 /* Mobile */
@@ -47,5 +50,30 @@
     }
     .message__wrap{
         grid-template-columns: 53% 47%;
+    }
+    .explore__row{
+        margin-bottom: 4px;
+    }
+    .explore__wrap{
+        padding: 0;
+    }
+    .row {
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+    .col {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .notify{
+        width: 385px;
+    }
+    .notify__item .notify__item-img,
+    .notify__item img{
+        width: 40px;
+        height: 40px;
+    }
+    .create__main-content{
+        padding: 95px 0;
     }
 }
