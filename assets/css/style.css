@@ -1390,6 +1390,7 @@ body{
     margin-left: 136px;
     margin-right: 0;
     z-index: 2;
+    object-fit: cover;
     cursor: pointer;
 }
 
@@ -1397,6 +1398,7 @@ body{
     border-radius: unset;
     margin-left: 101px;
     margin-right: 0;
+    object-fit: cover;
     z-index: 2;
 }
 
