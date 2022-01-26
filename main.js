@@ -13,11 +13,18 @@ function clickInputHistory() {
       iconSearch.classList.toggle('hide')
       iconClose.classList.toggle('hide')
       navbarHistory.classList.toggle('hide')
+      // delete value input 
+        const deleteValue = function() {
+          navInput.value = null
+      }
+      deleteValue()
   }
   
   navInput.addEventListener('click', changeInput)
   iconClose.addEventListener('click', changeInput)
   
+  
+
   // click window =>> close navbarhistory
   window.addEventListener('click', function(e){
       if ((!e.target.closest('.search__history')) && (!e.target.closest('.navbar__input'))){
@@ -248,44 +255,6 @@ function creatNewPost() {
 }
 creatNewPost()
 
-// click open message
-function openMess() {
-  const Mess = getElm('.message')
-  const iconOpenMess = getElm('.navbar__list-item--message')
-  const container = getElm('.container')
-  const iconHome = getElm('.navbar__list-item--home')
-
-
-  function changeMess() {
-    Mess.classList.toggle('hide')
-    container.classList.toggle('hide')
-  }
-
-  iconOpenMess.addEventListener('click', changeMess)
-
-
-  iconHome.addEventListener('click', function(e){
-    if(container.classList.contains('hide')){
-      container.classList.remove('hide')
-      Mess.classList.add('hide')
-      exploree.classList.add('hide')
-    }  
-  })
-  // click open explore
-  const exploree = getElm('.explore')
-  const iconExplore = getElm('.navbar__list-item--explore')
-  
-  function changeExplore() {
-      exploree.classList.toggle('hide')
-      container.classList.toggle('hide')
-    }
-  
-    iconExplore.addEventListener('click', changeExplore)
-
-}
-openMess()
-
-
 // click open new message
 function openNewMess() {
   const createMess = getElm('.creatmess')
@@ -331,7 +300,7 @@ openNewMess()
 function openNotify() {
   const notify = getElm('.notify')
   const iconNotify = getElm('.navbar__list-item--notify svg')
-
+ 
   function changeNotify() {
     notify.classList.toggle('hide')
   }
@@ -347,5 +316,37 @@ function openNotify() {
 }
 openNotify() 
 
+// click logo insta
+function goHome() {
+  const logoHome = getElm('.navbar__logo-link img')
+  
+  function clickLogoHome() {
+    getElm('.explore').classList.add('hide')
+    getElm('.message').classList.add('hide')
+    getElm('.container').classList.remove('hide')
+  }
+
+  logoHome.addEventListener('click', clickLogoHome)
+}
+goHome()
 
 
+// click open message and explore
+// active1 === class chung 
+const listIcon = document.querySelectorAll('.active--icon')
+
+listIcon.forEach(function(item, index) {
+  item.onclick = function(e) {
+
+    var itemActive = document.querySelectorAll('.active1')
+    document.querySelector('.active1.active2').classList.remove('active2')
+    itemActive[index].classList.add('active2')
+  }
+  // click open message
+  // Nếu click lại vào nó thì ẩn chính nó
+  // item.addEventListener('click', function() {
+  //     itemActive[index].classList.remove('active2')
+  //     document.querySelector('.container').classList.add('active2')
+  //   })
+
+})
