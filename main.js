@@ -316,37 +316,53 @@ function openNotify() {
 }
 openNotify() 
 
+// click open message/explore
+function openMessExplore() {
+  const container = getElm('.container')
 
-// click open message and explore
-// active1 === class chung 
-function activeNav() {
-  const listIcon = document.querySelectorAll('.active--icon')
+  const Mess = getElm('.message')
+  const iconOpenMess = getElm('.navbar__list-item--message')
+  const iconCloseMess = getElm('.message__icon')
+
+  const exploree = getElm('.explore')
+  const iconExplore = getElm('.navbar__list-item--explore')
+
+  const iconHome = getElm('.navbar__list-item--home')
+  const logoInsta = getElm('.navbar__logo-link img')
   
-  listIcon.forEach(function(item, index) {
-    item.onclick = function(e) {
-  
-      var itemActive = document.querySelectorAll('.active1')
-      document.querySelector('.active1.active2').classList.remove('active2')
-      itemActive[index].classList.add('active2')
-    }
-  })
+  // click open message
+  function changeMess() {
+    Mess.classList.toggle('hide')
+  }
+
+  iconOpenMess.addEventListener('click', changeMess)
+  iconCloseMess.addEventListener('click', changeMess)
+
+  Mess.addEventListener('click', function(e) {
+        if(e.target === e.currentTarget) {
+          changeMess()
+  }
+})
+
+  // // click open explore
+  function changeExplore() {
+    exploree.classList.toggle('hide')
+    container.classList.toggle('hide')
+    Mess.classList.add('hide')
+  }
+  iconExplore.addEventListener('click', changeExplore)
+
+  // click go home
+  function goHome() {
+    if(container.classList.contains('hide')){
+      container.classList.remove('hide')
+      exploree.classList.add('hide')
+    }  
+      Mess.classList.add('hide')
+  }
+  iconHome.addEventListener('click', goHome)
+  // click logo insta
+  logoInsta.addEventListener('click', goHome)
+
 }
-activeNav()
-
-// click logo insta
-// function goHome() {
-//   const logoHome = getElm('.navbar__logo-link img')
-  
-//   function clickLogoHome() {
-//     if(getElm('.explore').classList.contains('active2')){
-//       getElm('.explore.active2').classList.toggle('active2')
-//     }
-//     if(getElm('.message').classList.contains('active2')){
-//       getElm('.message.active2').classList.toggle('active2')
-//     }
-//     getElm('.container').classList.remove('hide')
-//   }
-
-//   logoHome.addEventListener('click', clickLogoHome)
-// }
-// goHome()
+openMessExplore()

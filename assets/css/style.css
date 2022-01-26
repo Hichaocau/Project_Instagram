@@ -89,10 +89,6 @@ body{
     display: none !important;
 }
 
-.active2{
-    display: flex !important;
-}
-
 .navbar__list{
     display: flex;
     justify-content: space-between;
@@ -934,6 +930,10 @@ body{
     color: #fff;
 }
 
+.create__icon i:hover{
+    transform: rotate(180deg);
+}
+
 .create__main{
     width: 348px;
     background-color: #fff;
@@ -985,8 +985,31 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 89px;
     /* position: relative; */
+
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color:  rgba(0,0,0,.85);
+    z-index: 100; 
+    border-bottom: 1px solid rgb(219, 219, 219)
+}
+
+.message__icon{
+    position: absolute;
+    right: 30px;
+    top: 22px;
+    cursor: pointer;
+}
+
+.message__icon i{
+    font-size: 3.4rem;
+    color: #0095f6;
+    /* color: #262626; */
+}
+
+.message__icon i:hover{
+    transform: rotate(180deg);
+    color: #5140ee;
 }
 
 .message__wrap{
@@ -996,17 +1019,23 @@ body{
     grid-template-columns: 38% 62%;
     overflow: hidden;
     padding: 0 10px;
+
+    margin-top: 89px;
+    height: 500px;
 }
 
 .message__info{
     border-top: 1px solid rgb(219, 219, 219);
     border-bottom: 1px solid rgb(219, 219, 219);
     border-left: 1px solid rgb(219, 219, 219);
+    background-color: var(--white-color); 
 }
 
 .message__detail{
+    position: relative;
     width: 98%;
     border: 1px solid rgb(219, 219, 219);
+    background-color: var(--white-color); 
 }
 
 .message__info-header{
@@ -1434,6 +1463,11 @@ body{
     width: 100%;
     padding-top: 100%;
     cursor: pointer;
+    transform: scale(1);
+}
+
+.explore__img1:hover{
+    transform: scale(1.05);
 }
 
 .switch{

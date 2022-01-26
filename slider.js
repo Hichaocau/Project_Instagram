@@ -72,7 +72,7 @@ $(document).ready(function(){
       infinite: false,
 
       slidesToShow: 3,
-      slidesToScroll: 1,
+      slidesToScroll: 2,
       dots: false, //dấu chấm dưới slider css: slick-dots
       // arrows: false, //ẩn previous/next
       prevArrow: `<button type='button' class='slick-prev slick-arrow slick-arrow-header'><i class="fas fa-chevron-left"></i></button>`,
@@ -96,8 +96,10 @@ $(document).ready(function(){
           {
             breakpoint: 480,
             settings: {
-            slidesToShow: 1,
-            // slidesToScroll: 1,
+            infinite: false,
+
+            slidesToShow: 2,
+            slidesToScroll: 1,
             }
           }
         ],
