@@ -70,8 +70,9 @@ $(document).ready(function(){
   $('.content__offer-list').slick({
       draggable: true,
       infinite: false,
-      slidesToShow: 2,
-      slidesToScroll: 2,
+
+      slidesToShow: 3,
+      slidesToScroll: 1,
       dots: false, //dấu chấm dưới slider css: slick-dots
       // arrows: false, //ẩn previous/next
       prevArrow: `<button type='button' class='slick-prev slick-arrow slick-arrow-header'><i class="fas fa-chevron-left"></i></button>`,
@@ -86,7 +87,9 @@ $(document).ready(function(){
           {
             breakpoint: 741,
             settings: {
-            slidesToShow: 1,  
+            infinite: false,
+
+            slidesToShow: 3,  
             slidesToScroll: 1,
             }
           },
@@ -94,7 +97,7 @@ $(document).ready(function(){
             breakpoint: 480,
             settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
+            // slidesToScroll: 1,
             }
           }
         ],

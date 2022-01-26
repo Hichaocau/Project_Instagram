@@ -316,37 +316,37 @@ function openNotify() {
 }
 openNotify() 
 
-// click logo insta
-function goHome() {
-  const logoHome = getElm('.navbar__logo-link img')
-  
-  function clickLogoHome() {
-    getElm('.explore').classList.add('hide')
-    getElm('.message').classList.add('hide')
-    getElm('.container').classList.remove('hide')
-  }
-
-  logoHome.addEventListener('click', clickLogoHome)
-}
-goHome()
-
 
 // click open message and explore
 // active1 === class chung 
-const listIcon = document.querySelectorAll('.active--icon')
+function activeNav() {
+  const listIcon = document.querySelectorAll('.active--icon')
+  
+  listIcon.forEach(function(item, index) {
+    item.onclick = function(e) {
+  
+      var itemActive = document.querySelectorAll('.active1')
+      document.querySelector('.active1.active2').classList.remove('active2')
+      itemActive[index].classList.add('active2')
+    }
+  })
+}
+activeNav()
 
-listIcon.forEach(function(item, index) {
-  item.onclick = function(e) {
+// click logo insta
+// function goHome() {
+//   const logoHome = getElm('.navbar__logo-link img')
+  
+//   function clickLogoHome() {
+//     if(getElm('.explore').classList.contains('active2')){
+//       getElm('.explore.active2').classList.toggle('active2')
+//     }
+//     if(getElm('.message').classList.contains('active2')){
+//       getElm('.message.active2').classList.toggle('active2')
+//     }
+//     getElm('.container').classList.remove('hide')
+//   }
 
-    var itemActive = document.querySelectorAll('.active1')
-    document.querySelector('.active1.active2').classList.remove('active2')
-    itemActive[index].classList.add('active2')
-  }
-  // click open message
-  // Nếu click lại vào nó thì ẩn chính nó
-  // item.addEventListener('click', function() {
-  //     itemActive[index].classList.remove('active2')
-  //     document.querySelector('.container').classList.add('active2')
-  //   })
-
-})
+//   logoHome.addEventListener('click', clickLogoHome)
+// }
+// goHome()
