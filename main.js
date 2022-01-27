@@ -261,6 +261,8 @@ function openNewMess() {
   const iconCreateMess = getElm('.message__info-header svg')
   const btnCreateMess = getElm('.message__detail-wrap button')
   const iconCloseMess = getElm('.creatmess__header i')
+  const inputMess = getElm('.creatmess__search input')
+  
 
   const iconOpenSwitch = getElm('.message__info-header-user')
   const switchAccount = getElm('.switch')
@@ -268,6 +270,11 @@ function openNewMess() {
 
   function changeCreateMes() {
     createMess.classList.toggle('hide')
+
+    const deleteSearch = function() {
+      inputMess.value = null
+    }
+    deleteSearch()
   }
   
   iconCreateMess.addEventListener('click', changeCreateMes)
