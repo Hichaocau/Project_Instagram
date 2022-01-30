@@ -1,5 +1,6 @@
 const getElm = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+const body = getElm('body')
 
 // click input history
 function clickInputHistory() {
@@ -211,6 +212,12 @@ function activeModal() {
   
   function changeModal() {
     modal.classList.toggle('hide')
+    if(!modal.classList.contains('hide')){
+      body.style.overflow = 'hidden'
+    }
+    else{
+      body.style.overflow = 'visible'
+    }
   }
   
   for (let i = 0; i < iconMenu.length; i++) {
@@ -242,6 +249,12 @@ function creatNewPost() {
 
   function changePost() {
     createPost.classList.toggle('hide')
+    if(!createPost.classList.contains('hide')){
+      body.style.overflow = 'hidden'
+    }
+    else{
+      body.style.overflow = 'visible'
+    }
   }
 
   iconCreatPost.addEventListener('click', changePost)
@@ -254,6 +267,63 @@ function creatNewPost() {
   })
 }
 creatNewPost()
+
+// click open message/explore
+function openMessExplore() {
+  const container = getElm('.container')
+
+  const Mess = getElm('.message')
+  const iconOpenMess = getElm('.navbar__list-item--message')
+  const iconCloseMess = getElm('.message__icon')
+
+  const exploree = getElm('.explore')
+  const iconExplore = getElm('.navbar__list-item--explore')
+
+  const iconHome = getElm('.navbar__list-item--home')
+  const logoInsta = getElm('.navbar__logo-link img')
+  
+  // click open message
+  function changeMess() {
+    Mess.classList.toggle('hide')
+    if(!Mess.classList.contains('hide')){
+      body.style.overflow = 'hidden'
+    }
+    else{
+      body.style.overflow = 'visible'
+    }
+  }
+
+  iconOpenMess.addEventListener('click', changeMess)
+  iconCloseMess.addEventListener('click', changeMess)
+
+  Mess.addEventListener('click', function(e) {
+        if(e.target === e.currentTarget) {
+          changeMess()
+  }
+})
+
+  // // click open explore
+  function changeExplore() {
+    exploree.classList.toggle('hide')
+    container.classList.toggle('hide')
+    Mess.classList.add('hide')
+  }
+  iconExplore.addEventListener('click', changeExplore)
+
+  // click go home
+  function goHome() {
+    if(container.classList.contains('hide')){
+      container.classList.remove('hide')
+      exploree.classList.add('hide')
+    }  
+      Mess.classList.add('hide')
+  }
+  iconHome.addEventListener('click', goHome)
+  // click logo insta
+  logoInsta.addEventListener('click', goHome)
+
+}
+openMessExplore()
 
 // click open new message
 function openNewMess() {
@@ -323,53 +393,3 @@ function openNotify() {
 }
 openNotify() 
 
-// click open message/explore
-function openMessExplore() {
-  const container = getElm('.container')
-
-  const Mess = getElm('.message')
-  const iconOpenMess = getElm('.navbar__list-item--message')
-  const iconCloseMess = getElm('.message__icon')
-
-  const exploree = getElm('.explore')
-  const iconExplore = getElm('.navbar__list-item--explore')
-
-  const iconHome = getElm('.navbar__list-item--home')
-  const logoInsta = getElm('.navbar__logo-link img')
-  
-  // click open message
-  function changeMess() {
-    Mess.classList.toggle('hide')
-  }
-
-  iconOpenMess.addEventListener('click', changeMess)
-  iconCloseMess.addEventListener('click', changeMess)
-
-  Mess.addEventListener('click', function(e) {
-        if(e.target === e.currentTarget) {
-          changeMess()
-  }
-})
-
-  // // click open explore
-  function changeExplore() {
-    exploree.classList.toggle('hide')
-    container.classList.toggle('hide')
-    Mess.classList.add('hide')
-  }
-  iconExplore.addEventListener('click', changeExplore)
-
-  // click go home
-  function goHome() {
-    if(container.classList.contains('hide')){
-      container.classList.remove('hide')
-      exploree.classList.add('hide')
-    }  
-      Mess.classList.add('hide')
-  }
-  iconHome.addEventListener('click', goHome)
-  // click logo insta
-  logoInsta.addEventListener('click', goHome)
-
-}
-openMessExplore()
